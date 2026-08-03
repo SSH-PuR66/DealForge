@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { TrackedLink } from '@/components/tracked-link'
+import { SITE } from '@/lib/site-config'
 
 const navLinks = [
-  { label: 'Product', href: '#product' },
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Results', href: '#results' },
+  { label: 'Product', href: '/#product' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Results', href: '/#results' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export function SiteHeader() {
@@ -33,13 +36,21 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-3">
           <Link
-            href="#"
+            href={SITE.calendlyUrl}
             className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:block"
+            target={SITE.calendlyUrl.startsWith('http') ? '_blank' : undefined}
+            rel={
+              SITE.calendlyUrl.startsWith('http')
+                ? 'noopener noreferrer'
+                : undefined
+            }
           >
-            Sign in
+            Book demo
           </Link>
           <Button
-            render={<Link href="#cta" />}
+            render={
+              <TrackedLink href={SITE.checkoutUrl} eventName="header_start_free" />
+            }
             nativeButton={false}
             className="bg-primary text-primary-foreground hover:bg-primary/90"
           >

@@ -1,11 +1,13 @@
 import Link from 'next/link'
+import { SITE } from '@/lib/site-config'
 
 const footerLinks = [
-  { label: 'Product', href: '#product' },
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Results', href: '#results' },
-  { label: 'Privacy', href: '#' },
-  { label: 'Terms', href: '#' },
+  { label: 'Product', href: '/#product' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Results', href: '/#results' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Terms', href: '/terms' },
 ]
 
 export function SiteFooter() {
@@ -29,9 +31,17 @@ export function SiteFooter() {
             ))}
           </ul>
         </nav>
-        <p className="text-sm text-muted-foreground">
-          &copy; 2026 Dealforge Inc.
-        </p>
+        <div className="text-right text-sm text-muted-foreground">
+          <p>&copy; 2026 Dealforge Inc.</p>
+          <p>
+            <Link
+              href={`mailto:${SITE.contactEmail}`}
+              className="transition-colors hover:text-foreground"
+            >
+              {SITE.contactEmail}
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   )

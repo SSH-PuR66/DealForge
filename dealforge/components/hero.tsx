@@ -1,6 +1,7 @@
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { TrackedLink } from '@/components/tracked-link'
+import { SITE } from '@/lib/site-config'
 
 const trustedBy = ['Northwind', 'Acmeline', 'Vantage', 'Brightpath', 'Kelora']
 
@@ -24,7 +25,7 @@ export function Hero() {
         </div>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
           <Button
-            render={<Link href="#cta" />}
+            render={<TrackedLink href={SITE.checkoutUrl} eventName="hero_start_free" />}
             nativeButton={false}
             size="lg"
             className="h-12 bg-primary px-8 text-base text-primary-foreground hover:bg-primary/90"
@@ -32,7 +33,9 @@ export function Hero() {
             Start closing free
           </Button>
           <Button
-            render={<Link href="#how-it-works" />}
+            render={
+              <TrackedLink href="/#how-it-works" eventName="hero_view_how_it_works" />
+            }
             nativeButton={false}
             size="lg"
             variant="outline"

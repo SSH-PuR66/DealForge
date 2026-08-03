@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { TrackedLink } from '@/components/tracked-link'
+import { SITE } from '@/lib/site-config'
 
 export function CtaSection() {
   return (
@@ -18,7 +19,9 @@ export function CtaSection() {
         </p>
         <div className="flex flex-col gap-4 sm:flex-row">
           <Button
-            render={<Link href="#" />}
+            render={
+              <TrackedLink href={SITE.checkoutUrl} eventName="cta_start_free" />
+            }
             nativeButton={false}
             size="lg"
             className="h-12 bg-primary px-8 text-base text-primary-foreground hover:bg-primary/90"
@@ -26,7 +29,18 @@ export function CtaSection() {
             Start closing free
           </Button>
           <Button
-            render={<Link href="#" />}
+            render={
+              <TrackedLink
+                href={SITE.calendlyUrl}
+                eventName="cta_talk_to_sales"
+                target={SITE.calendlyUrl.startsWith('http') ? '_blank' : '_self'}
+                rel={
+                  SITE.calendlyUrl.startsWith('http')
+                    ? 'noopener noreferrer'
+                    : undefined
+                }
+              />
+            }
             nativeButton={false}
             size="lg"
             variant="outline"

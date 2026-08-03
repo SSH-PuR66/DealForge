@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[97367,["/_next/static/chunks/0wo93mk-u4agh.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"mx-auto w-full max-w-4xl px-4 py-16 md:px-6","children":[["$","h1",null,{"className":"text-4xl font-bold tracking-tight md:text-5xl","children":"Terms of Service"}],["$","div",null,{"className":"mt-8 space-y-6 text-muted-foreground","children":[["$","p",null,{"children":"By using this site, you agree to use it for lawful purposes and to provide accurate information in any submitted forms."}],["$","p",null,{"children":"Service deliverables, timelines, and fees are finalized in signed agreements between Dealforge and each client."}],["$","p",null,{"children":"This website is informational and does not guarantee specific revenue outcomes."}]]}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"RJ_t0nmkS-o1Sh8wdRZ_Q"}
+4:null
